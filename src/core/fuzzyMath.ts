@@ -137,6 +137,23 @@ export function defuzzify(
     };
   }
 
+  if (method === 'bisector') {
+    // Bisector: finds x where area left equals area right
+    const halfArea = sumMu / 2;
+    let running = 0;
+    for (const s of samples) {
+      running += s.mu;
+      if (running >= halfArea) {
+        return { crispValue: s.x };
+      }
+    }
+    return { crispValue: samples[Math.floor(samples.length / 2)].x };
+  }
 
-  return { crispValue: Number(cog.toFixed(2)) };
+  // Mean of Maximum (MOM): average of all x with maximum mu
+  const maxMu = Math.max(...samples.map((s) => s.mu));
+  const maxPoints = samples.filter((s) => Math.abs(s.mu - maxMu) < 0.001);
+  const avgMaxX = maxPoints.reduce((acc, s) => acc + s.x, 0) / maxPoints.length;
+
+  return { crispValue: Number(avgMaxX.toFixed(2)) };
 }
