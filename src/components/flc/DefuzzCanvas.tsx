@@ -233,10 +233,6 @@ export const DefuzzCanvas: React.FC<DefuzzCanvasProps> = ({
           height={200}
           className="w-full h-auto rounded-xl border border-slate-800 bg-[#0a0d16] select-none"
         />
-        <div className="absolute top-2 right-2 flex items-center gap-2 bg-black/80 backdrop-blur-sm border border-slate-700/80 px-2.5 py-1 rounded-lg text-[10px] font-mono text-slate-300">
-          <Scale className="w-3 h-3 text-red-400" />
-          <span>Fulcrum Balances Fuzzy Surface Area</span>
-        </div>
       </div>
 
       {/* Live Formula & Calculation Box */}
@@ -250,9 +246,15 @@ export const DefuzzCanvas: React.FC<DefuzzCanvasProps> = ({
             </span>
           </div>
 
-          <span className="text-[10px] font-mono text-slate-400 bg-slate-900 px-2 py-0.5 rounded border border-slate-800">
-            Method: {defuzzMethod.toUpperCase()}
-          </span>
+          <div className="flex items-center gap-2">
+            <span className="flex items-center gap-1.5 text-[10px] font-mono text-slate-400 bg-slate-900/80 border border-slate-800 px-2 py-0.5 rounded">
+              <Scale className="w-3 h-3 text-red-400" />
+              <span>Fulcrum Balance</span>
+            </span>
+            <span className="text-[10px] font-mono text-slate-400 bg-slate-900 px-2 py-0.5 rounded border border-slate-800">
+              Method: {defuzzMethod.toUpperCase()}
+            </span>
+          </div>
         </div>
 
         {/* Integration Details if Centroid */}

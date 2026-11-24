@@ -255,7 +255,7 @@ export function App() {
         </section>
 
         {/* ==================== 5-PHASE ALGORITHM STEPPER ==================== */}
-        <section className="sticky top-16 z-30 pt-2">
+        <section className="relative z-20 pt-1">
           <StepperBar
             currentPhase={currentPhase}
             onSetPhase={setCurrentPhase}
