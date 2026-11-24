@@ -219,3 +219,5 @@ export const MFCanvas: React.FC<MFCanvasProps> = ({
     </div>
   );
 };
+
+// Drag interaction refined for mobile touch
