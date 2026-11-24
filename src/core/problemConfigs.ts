@@ -29,14 +29,14 @@ export const PROBLEMS: Record<string, ProblemConfig> = {
             name: 'Good',
             type: 'triangular',
             params: [1.0, 5.0, 9.0],
-            color: '#38bdf8', // Sky
+            color: '#f59e0b', // Amber
           },
           {
             id: 'excellent',
             name: 'Excellent',
             type: 'trapezoidal',
             params: [6.0, 8.5, 10.0, 10.0],
-            color: '#34d399', // Emerald
+            color: '#10b981', // Emerald
           },
         ],
       },
@@ -80,21 +80,21 @@ export const PROBLEMS: Record<string, ProblemConfig> = {
           name: 'Low Tip',
           type: 'triangular',
           params: [0, 5, 10],
-          color: '#fb7185',
+          color: '#f43f5e',
         },
         {
           id: 'medium',
           name: 'Medium Tip',
           type: 'triangular',
           params: [10, 15, 20],
-          color: '#38bdf8',
+          color: '#f59e0b',
         },
         {
           id: 'high',
           name: 'High Tip',
           type: 'triangular',
           params: [15, 20, 25],
-          color: '#34d399',
+          color: '#10b981',
         },
       ],
     },

@@ -1,5 +1,5 @@
 import React from 'react';
-import { Sliders, BookOpen, Volume2, VolumeX, Sparkles, RotateCcw } from 'lucide-react';
+import { Volume2, VolumeX, Sparkles, RotateCcw, Cpu, BookOpen } from 'lucide-react';
 import { soundFX } from '../../utils/audio';
 
 interface NavbarFLCProps {
@@ -22,106 +22,131 @@ export const NavbarFLC: React.FC<NavbarFLCProps> = ({
   onToggleSound,
 }) => {
   return (
-    <header className="bg-slate-900 border-b border-slate-800 text-white sticky top-0 z-40 shadow-lg">
-      <div className="max-w-7xl mx-auto px-4 py-3 flex flex-wrap items-center justify-between gap-3">
-        {/* Brand */}
+    <header className="bg-[#090b12]/90 backdrop-blur-md border-b border-slate-800 text-white sticky top-0 z-40 shadow-xl">
+      <div className="max-w-7xl mx-auto px-4 py-3 flex flex-wrap items-center justify-between gap-4">
+        {/* Brand Identity */}
         <div className="flex items-center gap-3">
-          <div className="w-10 h-10 rounded-xl bg-gradient-to-tr from-cyan-500 via-blue-600 to-indigo-600 flex items-center justify-center shadow-md shadow-cyan-500/20">
-            <Sliders className="w-5 h-5 text-white" />
+          <div className="w-9 h-9 rounded-xl bg-gradient-to-tr from-amber-500 via-amber-600 to-emerald-500 flex items-center justify-center shadow-lg shadow-amber-500/20">
+            <Cpu className="w-5 h-5 text-slate-950 font-bold" />
           </div>
           <div>
             <div className="flex items-center gap-2">
-              <span className="font-extrabold text-lg tracking-tight bg-gradient-to-r from-cyan-300 via-blue-200 to-indigo-200 bg-clip-text text-transparent">
+              <span className="font-extrabold text-lg tracking-tight bg-gradient-to-r from-amber-200 via-amber-300 to-emerald-300 bg-clip-text text-transparent">
                 FuzzyCraft
               </span>
-              <span className="text-[10px] uppercase font-bold tracking-wider px-2 py-0.5 rounded-full bg-cyan-500/20 border border-cyan-500/30 text-cyan-300">
-                Fuzzy Logic Controller
+              <span className="text-[10px] uppercase font-mono font-bold tracking-widest px-2 py-0.5 rounded-full bg-amber-500/10 border border-amber-500/30 text-amber-300">
+                Studio // FLC
               </span>
             </div>
-            <p className="text-xs text-slate-400">
-              Interactive Mamdani FLC Visualizer & Pedagogical Stepper
+            <p className="text-[10px] text-slate-400 font-mono hidden sm:block">
+              Soft Computing Lab &bull; Mamdani Inference &bull; Ross & Sivanandam Verified
             </p>
           </div>
         </div>
 
-        {/* Problem Picker (Tipping vs Washing Machine) */}
-        <div className="flex items-center bg-slate-950/80 p-1 rounded-xl border border-slate-800 text-xs">
-          <button
-            onClick={() => {
-              soundFX.click();
-              onSelectProblem('tipping');
-            }}
-            className={`flex items-center gap-1.5 px-3.5 py-1.5 rounded-lg font-semibold transition-all ${
-              currentProblemId === 'tipping'
-                ? 'bg-cyan-600 text-white shadow-sm'
-                : 'text-slate-400 hover:text-white hover:bg-slate-800/60'
-            }`}
-          >
-            <span>🍽️ Restaurant Tipping</span>
-          </button>
+        {/* Quick Section Navigation Links */}
+        <nav className="hidden lg:flex items-center gap-4 text-xs font-medium text-slate-400">
+          <a href="#workbench" className="hover:text-amber-300 transition-colors">
+            Workbench
+          </a>
+          <a href="#rules" className="hover:text-amber-300 transition-colors">
+            Rule Base
+          </a>
+          <a href="#defuzzification" className="hover:text-amber-300 transition-colors">
+            Defuzzification
+          </a>
+          <a href="#verification" className="hover:text-amber-300 transition-colors">
+            Textbook Proof
+          </a>
+          <a href="#pid-comparison" className="hover:text-amber-300 transition-colors">
+            PID vs Fuzzy
+          </a>
+          <a href="#quiz" className="hover:text-amber-300 transition-colors">
+            Viva Prep
+          </a>
+        </nav>
 
-          <button
-            onClick={() => {
-              soundFX.click();
-              onSelectProblem('washing');
-            }}
-            className={`flex items-center gap-1.5 px-3.5 py-1.5 rounded-lg font-semibold transition-all ${
-              currentProblemId === 'washing'
-                ? 'bg-cyan-600 text-white shadow-sm'
-                : 'text-slate-400 hover:text-white hover:bg-slate-800/60'
-            }`}
-          >
-            <span>🧺 Washing Machine</span>
-          </button>
-        </div>
+        {/* Action Controls */}
+        <div className="flex items-center gap-2.5 flex-wrap">
+          {/* Problem Selector Pills */}
+          <div className="flex items-center gap-1 bg-[#121624] p-1 rounded-xl border border-slate-800">
+            <button
+              onClick={() => {
+                soundFX.click();
+                onSelectProblem('tipping');
+              }}
+              className={`px-3 py-1 text-xs font-semibold rounded-lg transition-all cursor-pointer ${
+                currentProblemId === 'tipping'
+                  ? 'bg-amber-500 text-slate-950 font-bold shadow-md shadow-amber-500/20'
+                  : 'text-slate-400 hover:text-slate-200'
+              }`}
+            >
+              🍽️ Restaurant Tipping
+            </button>
+            <button
+              onClick={() => {
+                soundFX.click();
+                onSelectProblem('washing');
+              }}
+              className={`px-3 py-1 text-xs font-semibold rounded-lg transition-all cursor-pointer ${
+                currentProblemId === 'washing'
+                  ? 'bg-amber-500 text-slate-950 font-bold shadow-md shadow-amber-500/20'
+                  : 'text-slate-400 hover:text-slate-200'
+              }`}
+            >
+              🧺 Washing Machine
+            </button>
+          </div>
 
-        {/* Global Action Buttons */}
-        <div className="flex items-center gap-2">
+          {/* 1-Click Textbook Benchmark Loader */}
           <button
             onClick={() => {
               soundFX.celebration();
               onLoadBenchmark();
             }}
-            className="flex items-center gap-1.5 px-3 py-1.5 bg-gradient-to-r from-emerald-600 to-teal-600 hover:from-emerald-500 hover:to-teal-500 text-white text-xs font-semibold rounded-lg shadow-md shadow-emerald-900/30 transition-all border border-emerald-400/30 cursor-pointer"
-            title="Load textbook benchmark values (Service = 7.0, Food = 8.0)"
+            title="Load Timothy J. Ross Benchmark (Service=7.0, Food=8.0 -> Tip=17.9%)"
+            className="flex items-center gap-1.5 px-3 py-1.5 rounded-xl bg-gradient-to-r from-amber-500/10 to-emerald-500/10 hover:from-amber-500/20 hover:to-emerald-500/20 border border-amber-500/30 text-amber-300 text-xs font-semibold transition-all shadow-sm cursor-pointer"
           >
-            <Sparkles className="w-3.5 h-3.5 text-yellow-300 animate-spin" />
-            <span>Load Textbook Benchmark</span>
+            <Sparkles className="w-3.5 h-3.5 text-amber-400 animate-pulse" />
+            <span className="hidden sm:inline">Textbook Benchmark</span>
           </button>
 
+          {/* Textbook Proof Modal Trigger */}
           <button
             onClick={() => {
               soundFX.click();
               onToggleVerification();
             }}
-            className="flex items-center gap-1.5 px-3 py-1.5 bg-slate-800 hover:bg-slate-700 text-amber-300 text-xs font-semibold rounded-lg border border-slate-700 hover:border-amber-500/40 transition-all cursor-pointer"
-            title="View Step-by-Step Textbook Hand Calculation"
+            title="Open step-by-step textbook proof modal"
+            className="flex items-center gap-1.5 px-3 py-1.5 rounded-xl bg-[#141828] hover:bg-slate-800 border border-slate-700 text-slate-200 text-xs font-semibold transition-all cursor-pointer"
           >
-            <BookOpen className="w-3.5 h-3.5" />
-            <span>Hand Calculations</span>
+            <BookOpen className="w-3.5 h-3.5 text-amber-400" />
+            <span className="hidden sm:inline">Textbook Proof</span>
           </button>
 
+          {/* Reset Button */}
           <button
             onClick={() => {
               soundFX.click();
               onReset();
             }}
-            className="p-2 rounded-lg bg-slate-800 hover:bg-slate-700 text-slate-300 hover:text-white border border-slate-700 transition-all cursor-pointer"
-            title="Reset to default inputs"
+            title="Reset parameters to initial state"
+            className="p-1.5 rounded-lg bg-[#121624] hover:bg-slate-800 border border-slate-800 text-slate-300 hover:text-white transition-colors cursor-pointer"
           >
             <RotateCcw className="w-4 h-4" />
           </button>
 
+          {/* Audio Toggle */}
           <button
             onClick={onToggleSound}
-            className={`p-2 rounded-lg transition-all border cursor-pointer ${
-              soundEnabled
-                ? 'bg-slate-800 text-cyan-400 border-cyan-500/40'
-                : 'bg-slate-800/50 text-slate-500 border-slate-800'
-            }`}
-            title={soundEnabled ? 'Mute Audio FX' : 'Enable Audio FX'}
+            title={soundEnabled ? 'Mute Audio' : 'Enable Audio'}
+            className="p-1.5 rounded-lg bg-[#121624] hover:bg-slate-800 border border-slate-800 text-slate-300 hover:text-white transition-colors cursor-pointer"
           >
-            {soundEnabled ? <Volume2 className="w-4 h-4" /> : <VolumeX className="w-4 h-4" />}
+            {soundEnabled ? (
+              <Volume2 className="w-4 h-4 text-emerald-400" />
+            ) : (
+              <VolumeX className="w-4 h-4 text-slate-500" />
+            )}
           </button>
         </div>
       </div>
