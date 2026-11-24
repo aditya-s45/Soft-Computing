@@ -109,5 +109,3 @@ export const RuleMatrix: React.FC<RuleMatrixProps> = ({
     </div>
   );
 };
-
-// Firing strength visual clipping bar
