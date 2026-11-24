@@ -234,3 +234,5 @@ export const DefuzzCanvas: React.FC<DefuzzCanvasProps> = ({
     </div>
   );
 };
+
+// Dynamic balance fulcrum and centroid indicator
