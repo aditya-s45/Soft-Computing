@@ -1,4 +1,4 @@
-name: Deploy GeneCraft to GitHub Pages
+name: Deploy FuzzyCraft to GitHub Pages
 
 on:
   push:
