@@ -7,7 +7,6 @@ import { DefuzzCanvas } from './components/flc/DefuzzCanvas';
 import { PlainExplainerFLC } from './components/flc/PlainExplainerFLC';
 import { TextbookVerificationSection } from './components/flc/TextbookVerificationSection';
 import { PidVsFuzzySection } from './components/flc/PidVsFuzzySection';
-import { SoftComputingQuizSection } from './components/flc/SoftComputingQuizSection';
 import { TheoryGlossarySection } from './components/flc/TheoryGlossarySection';
 import { TextbookVerificationModal } from './components/flc/TextbookVerificationModal';
 
@@ -378,10 +377,7 @@ export function App() {
         {/* ==================== SECTION 5: PID VS FUZZY BENCHMARK ==================== */}
         <PidVsFuzzySection />
 
-        {/* ==================== SECTION 6: VIVA / EXAM PRACTICE QUIZ ==================== */}
-        <SoftComputingQuizSection />
-
-        {/* ==================== SECTION 7: THEORY & REFERENCES ==================== */}
+        {/* ==================== SECTION 6: THEORY & REFERENCES ==================== */}
         <TheoryGlossarySection />
       </main>
 

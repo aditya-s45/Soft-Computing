@@ -13,7 +13,7 @@
 
 ## 🌟 Executive Overview & Public Links
 
-**FuzzyCraft Studio** is a browser-based, interactive educational platform built to teach **Fuzzy Logic Controllers (FLC)** from first principles. Unlike generic template projects, FuzzyCraft features a bespoke **Scientific Instrument / Obsidian & Amber Gold** dark aesthetic with high-contrast glowing curves, a fully scrollable comprehensive learning curriculum, real-time interactive canvases, side-by-side PID vs Fuzzy engineering benchmarks, and an interactive Soft Computing viva preparation lab.
+**FuzzyCraft Studio** is a browser-based, interactive educational platform built to teach **Fuzzy Logic Controllers (FLC)** from first principles. Unlike generic template projects, FuzzyCraft features a bespoke **Scientific Instrument / Obsidian & Amber Gold** dark aesthetic with high-contrast glowing curves, a fully scrollable comprehensive learning curriculum, real-time interactive canvases, side-by-side PID vs Fuzzy engineering benchmarks, and complete textbook hand-calculation proofs.
 
 $$\text{Crisp Inputs } x_i \xrightarrow{\text{Fuzzification}} \mu_A(x_i) \in [0, 1] \xrightarrow{\text{Mamdani Min Implication}} \alpha_k \xrightarrow{\text{Max Aggregation}} \mu_{\text{agg}}(z) \xrightarrow{\text{Centroid COG}} \text{Crisp Action } z^*$$
 
@@ -30,11 +30,10 @@ $$\text{Crisp Inputs } x_i \xrightarrow{\text{Fuzzification}} \mu_A(x_i) \in [0,
 | Feature Dimension | Generic Student Submissions | FuzzyCraft Studio |
 | :--- | :--- | :--- |
 | **Color Scheme** | Default Slate-950 + Cyan gradients (typical AI look) | **Cosmic Obsidian (`#08090e`), Amber Gold (`#f59e0b`), Aurora Emerald (`#10b981`), and Crimson Coral (`#f43f5e`)** |
-| **Layout & Experience** | Crammed single-viewport dashboard | **Fully scrollable educational journey** with hero overview, interactive simulator, rule matrix, defuzzification lab, textbook verification, PID vs Fuzzy comparison, and quiz |
+| **Layout & Experience** | Crammed single-viewport dashboard | **Fully scrollable educational journey** with hero overview, interactive simulator, rule matrix, defuzzification lab, textbook verification, and PID vs Fuzzy control comparison |
 | **Input Interaction** | Standard HTML sliders only | **Dual Mode:** Tactile range sliders with percentage presets + **Interactive Draggable Needles** directly on HTML5 Canvas |
 | **Defuzzification** | Single black-box number | **3 Interchangeable Methods** (Centroid COG, Bisector BOA, Mean of Maximum MOM) with dynamic fulcrum balance physics and integral breakdown |
 | **Academic Rigor** | Approximated or synthetic problems | **Exact Textbook Parity** against Timothy J. Ross and S.N. Sivanandam with $\Delta \le 0.05\%$ error delta |
-| **Viva / Exam Prep** | None | **Interactive Soft Computing Practice Quiz** with 4 essential questions and instant textbook feedback |
 
 ---
 
@@ -118,7 +117,7 @@ Use this exact script for recording your evaluation video:
 | **1:15 - 2:00** | Section 2: Mamdani Rule Matrix | *"Moving to Section 2, the Mamdani Inference engine evaluates the knowledge base. For Rule 2, since Service is Good at 0.50, it fires with strength alpha = 0.50, clipping the 'Medium Tip' triangle horizontally. For Rule 3, the OR conjunction evaluates max(0.50, 1.00) = 1.00, meaning 'High Tip' fires at full 100% strength."* |
 | **2:00 - 2:45** | Section 3: Defuzzification & Fulcrum | *"In Section 3, Mamdani max-aggregation combines these clipped shapes into an aggregated polygon. Defuzzification converts this area back into a crisp action. Using the Center of Gravity method, our engine numerically integrates the weighted area divided by total area, giving a crisp tip of exactly 17.9%. Notice the red balance fulcrum indicating the physical center of mass."* |
 | **2:45 - 3:30** | Section 4: Textbook Verification & Section 5: PID Benchmark | *"In Section 4, our built-in Textbook Verification module proves that our numerical engine matches the hand calculation from Timothy J. Ross Chapter 5 line-by-line with an error delta of less than 0.05%. In Section 5, we provide a control theory comparison detailing why FLC excels over classical PID in non-linear plants without requiring differential equations."* |
-| **3:30 - 4:00** | Section 6: Viva Quiz & Conclusion | *"Finally, our platform includes an interactive Soft Computing Viva Quiz to test knowledge on Zadeh's T-norms and defuzzification properties. FuzzyCraft is hosted open-source on GitHub Pages and runs entirely client-side without any backend dependencies. Thank you!"* |
+| **3:30 - 4:00** | Section 6: Mathematical Formulations & Conclusion | *"Finally, our platform details Zadeh's formal T-norm and S-norm operators, membership geometry equations, and defuzzification integrals. FuzzyCraft is hosted open-source on GitHub Pages and runs entirely client-side without any backend dependencies. Thank you!"* |
 
 ---
 

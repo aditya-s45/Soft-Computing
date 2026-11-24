@@ -61,8 +61,8 @@ export const NavbarFLC: React.FC<NavbarFLCProps> = ({
           <a href="#pid-comparison" className="hover:text-amber-300 transition-colors">
             PID vs Fuzzy
           </a>
-          <a href="#quiz" className="hover:text-amber-300 transition-colors">
-            Viva Prep
+          <a href="#theory" className="hover:text-amber-300 transition-colors">
+            Theory &amp; Formulations
           </a>
         </nav>
 
